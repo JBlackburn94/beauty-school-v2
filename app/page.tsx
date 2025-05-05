@@ -12,6 +12,10 @@ export default function Home() {
         className="aspect-[2/1 h-screen"
       />
       <Merch />
+      <ParallaxBanner
+        layers={[{ image: "/parallax-2.jpg", speed: -15 }]}
+        className="aspect-[2/1 h-screen"
+      />
     </main>
   );
 }
