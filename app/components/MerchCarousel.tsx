@@ -17,7 +17,7 @@ export default function MerchCarousel({ images }: MerchCarouselProps) {
     if (!imageRef.current) return;
 
     gsap.to(imageRef.current, {
-      x: direction === "left" ? -200 : 200,
+      x: direction === "left" ? -50 : 50,
       opacity: 0,
       duration: 0.4,
       onComplete,
@@ -29,7 +29,7 @@ export default function MerchCarousel({ images }: MerchCarouselProps) {
 
     gsap.fromTo(
       imageRef.current,
-      { x: direction === "left" ? -200 : 200 },
+      { x: direction === "left" ? -50 : 50 },
       { x: 0, opacity: 1, duration: 0.4 }
     );
   };
@@ -55,7 +55,7 @@ export default function MerchCarousel({ images }: MerchCarouselProps) {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col justify-center items-center w-full lg:w-1/2 z-20">
       <div ref={imageRef}>
         <Image
           src={images[current]}
@@ -66,13 +66,13 @@ export default function MerchCarousel({ images }: MerchCarouselProps) {
       <div className="flex gap-4 mt-4">
         <button
           onClick={handlePrev}
-          className="bg-white text-[#e65935] px-4 py-2 rounded shadow-2xl hover:bg-gray-200"
+          className="bg-[#e65935] text-white px-4 py-2 font-bold rounded shadow-2xl hover:bg-[#ff6a6a]"
         >
           Prev
         </button>
         <button
           onClick={handleNext}
-          className="bg-white text-[#e65935] px-4 py-2 rounded shadow-2xl hover:bg-gray-200"
+          className="bg-[#e65935] text-white px-4 py-2 font-bold rounded shadow-2xl hover:bg-[#ff6a6a]"
         >
           Next
         </button>
